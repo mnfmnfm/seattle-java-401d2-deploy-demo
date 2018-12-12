@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Potato</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+<body>
+    <h1>Dinosaurs!</h1>
+    <ul>
+        <li th:each="dino : ${dinosaurs}">
+            <span th:text="${dino.species}"></span> dinosaur that is a <span th:text="${dino.diet}"></span>
+        </li>
+    </ul>
+    <h2>Add a dino!</h2>
+    <form action="/dinosaurs" method="POST">
+        <input name="species" />
+        <input name="numberOfSpikes" />
+        <input name="diet" />
+        <input type="submit" />
+    </form>
+</body>
+</html>
