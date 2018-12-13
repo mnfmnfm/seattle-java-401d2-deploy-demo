@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Locations</title>
+    <div th:replace="~{common :: head}"></div>
+</head>
+<body>
+<h1>Locations!</h1>
+<ul>
+    <li th:each="location : ${locations}">
+        <span th:text="${location}"></span>
+        <form method="POST" th:action="${'/locations/' + location.id + '/dinosaurs'}">
+            <input name="species" />
+            <input name="numberOfSpikes" />
+            <input name="diet" />
+            <input type="submit" />
+        </form>
+    </li>
+</ul>
+<h2>Add a location!</h2>
+<form action="/locations" method="POST">
+    <input name="name" />
+    <input name="environment" />
+    <input type="submit" />
+</form>
+</body>
+</html>

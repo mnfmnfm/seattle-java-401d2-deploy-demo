@@ -24,6 +24,6 @@ public class Dinosaur {
     }
 
     public String toString() {
-        return species + " dinosaur with " + numberOfSpikes + " spikes";
+        return species + " dinosaur with " + numberOfSpikes + " spikes, in " + (this.location != null ? this.location.name : "no location") ;
     }
 }

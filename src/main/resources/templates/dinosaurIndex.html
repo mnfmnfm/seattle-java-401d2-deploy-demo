@@ -8,7 +8,7 @@
     <h1>Dinosaurs!</h1>
     <ul>
         <li th:each="dino : ${dinosaurs}">
-            <span th:text="${dino.species}"></span> dinosaur that is a <span th:text="${dino.diet}"></span>
+            <span th:text="${dino}"></span>
         </li>
     </ul>
     <h2>Add a dino!</h2>

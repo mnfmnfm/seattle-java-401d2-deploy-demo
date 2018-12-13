@@ -11,7 +11,7 @@ public class Location {
     public String environment;
     public String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "location")
     public List<Dinosaur> dinosaurs;
     public Location() {}
 
@@ -21,6 +21,6 @@ public class Location {
     }
 
     public String toString() {
-        return this.name;
+        return this.name + " with " + this.dinosaurs;
     }
 }
