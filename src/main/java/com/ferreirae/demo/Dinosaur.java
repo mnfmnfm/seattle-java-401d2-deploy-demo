@@ -1,10 +1,7 @@
 package com.ferreirae.demo;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Dinosaur {
@@ -14,6 +11,9 @@ public class Dinosaur {
     public String species;
     public int numberOfSpikes;
     public String diet;
+
+    @ManyToOne
+    public Location location;
 
     public Dinosaur() {}
 
