@@ -9,6 +9,16 @@
     <ul>
         <li th:each="dino : ${dinosaurs}">
             <span th:text="${dino}"></span>
+            <h5>This dino likes someone!</h5>
+            <form th:action="${'/dinosaurs/' + dino.id + '/likes'}" method="POST">
+                <select name="likedDino">
+                    <option th:each="innerdino : ${dinosaurs}"
+                      th:text="${innerdino.species}"
+                      th:value="${innerdino.id}">
+                    </option>
+                </select>
+                <input type="submit" value="Add that like!" />
+            </form>
         </li>
     </ul>
     <h2>Add a dino!</h2>
